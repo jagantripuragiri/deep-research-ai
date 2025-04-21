@@ -3,6 +3,8 @@ import os
 
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
+
+
 def search_tavily(query):
     url = "https://api.tavily.com/search"
     headers = {"Authorization": f"Bearer {TAVILY_API_KEY}"}
@@ -16,3 +18,5 @@ def search_tavily(query):
     data = response.json()
     results = [doc['content'] for doc in data.get("results", [])]
     return results
+# utils/tavily_wrapper.py
+

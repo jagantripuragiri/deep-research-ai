@@ -1,9 +1,15 @@
+# graph_flow.py
 from langgraph.graph import StateGraph
 from agents.research_agent import research_agent
 from agents.drafting_agent import drafting_agent
+from typing import TypedDict
+
+class ResearchState(TypedDict):
+    query: str
+    documents: str  # Changed from context to documents
 
 def build_graph():
-    workflow = StateGraph()
+    workflow = StateGraph(ResearchState)
 
     # Define flow
     workflow.add_node("research", research_agent)

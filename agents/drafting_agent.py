@@ -1,4 +1,5 @@
-from langchain.chat_models import ChatOpenAI
+# drafting_agent.py
+from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage
 
 llm = ChatOpenAI(model="gpt-3.5-turbo")
